@@ -30,7 +30,7 @@ body {
   margin-bottom: .75rem;
   border-radius: .5rem;
   padding: 0.9375rem;
-  box-shadow: 0 0 1px black inset, -1px 1px #666;
+  box-shadow: 0 0 1px black inset, 1px -1px #666;
 }
 
 .buttons {
@@ -45,7 +45,6 @@ body {
   display: inline-block;
   box-shadow: -1px 1px 0px rgb(173, 1, 1);
 }
-
 
 .row.screen-area-doodads {
   margin-top: 10px;
@@ -66,4 +65,93 @@ body {
 .screen-lines hr {
   border-top: 2px solid black;
   margin: 4px 0;
+}
+
+.post-screen {
+  padding: 0;
+}
+
+.blue-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgb(86, 86, 242);
+  box-shadow: -2px 2px 0 rgb(51, 51, 153);
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.skinny-button {
+  width: 70px;
+  height: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: -5px;
+  vertical-align: super;
+}
+
+.green-button {
+  background-color: lime;
+  box-shadow: -2px 2px 0 rgb(0, 126, 0);
+}
+
+.red-button {
+  background-color: tomato;
+  box-shadow: -2px 2px 0 rgb(150, 57, 40);
+}
+
+.yellow-text-area {
+  width: 150px;
+  height: 60px;
+  background-color: yellow;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px -1px #666;
+  box-shadow: 1px -1px #666;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.cross-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.cross {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.cross:before, .cross:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+.cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  height: 100%;
+}
+
+.cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
+}
+
+.cross-shadow:before, .cross-shadow:after {
+  background: #113232;
+}
+
+.cross-main:before, .cross-main:after {
+  background: #04746D;
+}
+
+.cross-main {
+  top: -3px;
+  left: 18px;
 }
