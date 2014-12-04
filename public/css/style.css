@@ -23,9 +23,9 @@ body {
   padding: 38px;
   box-shadow:
     /* Black Lines */
-    inset 0 0 0 1px black,
+    inset 0 0 0 1px rgb(145,0,0),
     inset 0 0 0 19px red,
-    inset 0 0 0 20px black,
+    inset 0 0 0 20px rgb(145,0,0),
     /* Shadow */
     -1px 0px 0px rgb(145, 0, 0),
     -2px 2px 0px rgb(145, 0, 0),
@@ -48,14 +48,12 @@ body {
   border-radius: .75rem;
   position: relative;
   margin-bottom: 10px;
-  /* border: 1px solid black; */
 }
 
 .screen-area-dropback {
   background-color: #666;
   background:
   linear-gradient(45deg, transparent 25px, #666 0) bottom left;
-  /* border: 1px solid black; */
 }
 
 .screen-area-main {
@@ -209,8 +207,8 @@ body {
 
 .center-joint {
   width: 55px;
-  height: 541px;
-  border: 1px solid black;
+  height: 539px;
+  border: 1px solid rgb(145,0,0);
   position:relative;
   left: calc(100% + 17px);
   top: 82px;
@@ -237,19 +235,18 @@ body {
   background-image:
     /* Upper curve */
     radial-gradient(265px at 50% calc(100% - 20px),
-      rgba(0,0,0,0) 50px,
-      rgba(0,0,0,1) 51px,
-      rgba(0,0,0,0) 52px ),
+      transparent 50px,
+      rgb(145,0,0) 51px,
+      transparent 52px ),
     /* Lower curve */
     radial-gradient(265px at 50% calc(100% - 50px),
-      rgba(0,0,0,0) 50px,
-      rgba(0,0,0,1) 51px,
-      rgba(0,0,0,0) 52px ),
+      transparent 50px,
+      rgb(145,0,0) 51px,
+      transparent 52px ),
     /* Lowest shadow */
     radial-gradient(265px at 50% calc(100% + 33px),
       rgba(145,0,0,1) 50px,
-      rgba(0,0,0,1) 51px,
-      rgba(0,0,0,0) 52px ),
+      transparent 52px ),
     /* Vertical shading */
     linear-gradient(90deg, rgb(190,0,0) 19%, red 20%);
 }
@@ -262,15 +259,15 @@ body {
   background-image:
   /* Lower curve */
   radial-gradient(265px at 50% calc(100px),
-  rgba(0,0,0,0) 50px,
-  rgba(0,0,0,1) 51px,
-  rgba(0,0,0,0) 52px
+  transparent 50px,
+  rgb(145,0,0) 51px,
+  transparent 52px
   ),
   /* Upper curve */
   radial-gradient(265px at 50% calc(130px),
-  rgba(0,0,0,0) 50px,
-  rgba(0,0,0,1) 51px,
-  rgba(0,0,0,0) 52px
+  transparent 50px,
+  rgb(145,0,0) 51px,
+  transparent 52px
   ),
   /* Vertical shading */
   linear-gradient(90deg, rgb(190,0,0) 19%, red 20%);
@@ -301,8 +298,8 @@ body {
   border-bottom-right-radius: 80px;
   background-color: rgb(145,0,0);
   height: 100%;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
+  border-bottom: 1px solid rgb(145,0,0);
+  border-left: 1px solid rgb(145,0,0);
   border-bottom-right-radius: 149px 62px;
 }
 
@@ -329,7 +326,7 @@ body {
   background-color: rgb(255,0,0);
   border-top-left-radius: 98px 48px;
   z-index: 1;
-  border-top: 1px solid black;
+  border-top: 1px solid rgb(145,0,0);
   right: 10px;
   bottom: 10px;
   clip: rect(0px, 205px, 190px, 10px)
@@ -350,4 +347,65 @@ body {
 
 .left.top-wrapper.main-wrapper .right-half.full {
   background-color: rgb(255,0,0);
+}
+
+.lights {
+  position: absolute;
+  top:0;
+  left:20px;
+}
+
+.light {
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.large.light.shadow {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  position: relative;
+  background-color: #fff;
+  border-color: rgb(145,0,0);
+}
+
+.large.light.main {
+  height: 60px;
+  width: 60px;
+  top: 4px;
+  left: 8px;
+  border-color: #06D5D8;
+  background-image:
+    radial-gradient(1px 2px at 12px 29px,
+      #D0F5F5 5px,
+      #09F7FA 6px);
+  transform: rotate(50deg);  position: absolute;
+}
+
+.small.light {
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+  background-image:
+    radial-gradient(2px 1px at 9px 4px,
+      rgba(255,255,255,.8) 3px,
+      transparent 5px);
+  transform: rotate(-30deg);
+}
+
+.small.light.red {
+  background-color: red;
+  border-color: rgb(155,0,0);
+}
+
+.small.light.yellow {
+  background-color: yellow;
+  border-color: rgb(89, 89, 0);
+}
+
+.small.light.green {
+  background-color: lime;
+  border-color: rgb(10, 155, 10);
 }
