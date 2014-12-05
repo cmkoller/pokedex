@@ -90,12 +90,26 @@ body {
   margin-top: 10px;
 }
 
+.pokebutton {
+  position: relative;
+}
+
+.pokebutton:active {
+  top: 1px;
+  left: -1px;
+}
+
 .post-screen-circle {
   height: 24px;
   width: 24px;
   border-radius: 30px;
   background-color: red;
   box-shadow: -2px 2px 0px rgb(173, 1, 1);
+}
+
+.post-screen-circle:active {
+  background-color: rgb(230,0,0);
+  box-shadow: -1px 1px 0 rgb(173, 1, 1);
 }
 
 .screen-lines {
@@ -123,6 +137,11 @@ body {
   margin-right: 5px;
 }
 
+.blue-button:active {
+  background-color: rgb(72,72,208);
+  box-shadow: -1px 1px 0 rgb(24,24,81);
+}
+
 .skinny-button {
   width: 70px;
   height: 20px;
@@ -138,9 +157,19 @@ body {
   box-shadow: -2px 2px 0 rgb(0, 126, 0);
 }
 
+.green-button:active {
+  background-color: rgb(0,229,0);
+  box-shadow: -1px 1px 0 rgb(0, 126, 0);
+}
+
 .red-button {
   background-color: tomato;
   box-shadow: -2px 2px 0 rgb(150, 57, 40);
+}
+
+.red-button:active {
+  background-color: rgb(223, 83, 58);
+  box-shadow: -1px 1px 0 rgb(150, 57, 40);
 }
 
 .yellow-text-area {
@@ -160,7 +189,8 @@ body {
   z-index: 1;
 }
 
-.cross {
+.cross,
+.cross-main {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -200,9 +230,47 @@ body {
   left: 18px;
 }
 
+.cross-main div {
+  position: absolute;
+  background-color: #04746D;
+}
 
+.cross-main .vertical {
+  width: 30%;
+  height: 50%;
+  left: 35%;
+}
 
+.cross-main .horizontal {
+  width: 50%;
+  height: 30%;
+  top: 35%;
+}
 
+.cross-main .cross-top { top: 0; }
+.cross-main .cross-bottom { bottom: 0; }
+.cross-main .cross-left { left: 0; }
+.cross-main .cross-right { right: 0; }
+
+.cross-main .cross-top:active {
+  transform: skewX(4deg);
+  left: calc(35% - 1px);
+}
+
+.cross-main .cross-bottom:active {
+  transform: skewX(-4deg);
+  left: calc(35% - 1px);
+}
+
+.cross-main .cross-left:active {
+  transform: skewY(-4deg);
+  top: calc(35% + 1px);
+}
+
+.cross-main .cross-right:active {
+  transform: skewY(4deg);
+  top: calc(35% + 1px);
+}
 
 
 .center-joint {
