@@ -7,7 +7,7 @@ gem 'pokegem', '~> 0.0.2'
 gem 'typhoeus'
 gem 'json'
 gem 'heroku'
-gem 'thin
+gem 'thin'
 
 group :development, :test do
   gem 'pry'
