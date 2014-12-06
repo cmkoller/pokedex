@@ -1,91 +1,107 @@
-<div class="left-area columns">
-  <div class="left top-wrapper">
-    <div class="left top-wrapper shadow-wrapper">
-      <div class="left-half"></div>
-      <div class="right-half full"></div>
-      <div class="right-half curve"></div>
-    </div>
-    <div class="left top-wrapper main-wrapper">
-      <div class="left-half"></div>
-      <div class="right-half full"></div>
-      <div class="right-half curve"></div>
-    </div>
-    <div class="lights">
-      <div class="shadow large light">
-        <div class="main large light"></div>
+<div class="pokedex-wrapper">
+  <div class="left-area columns">
+    <div class="left top-wrapper">
+      <div class="left top-wrapper shadow-wrapper">
+        <div class="left-half"></div>
+        <div class="right-half full"></div>
+        <div class="right-half curve"></div>
       </div>
-      <div class="small light red"></div>
-      <div class="small light yellow"></div>
-      <div class="small light green"></div>
+      <div class="left top-wrapper main-wrapper">
+        <div class="left-half"></div>
+        <div class="right-half full"></div>
+        <div class="right-half curve"></div>
+      </div>
+      <div class="lights">
+        <div class="shadow large light">
+          <div class="main large light"></div>
+        </div>
+        <div class="small light red"></div>
+        <div class="small light yellow"></div>
+        <div class="small light green"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="columns left-content center">
-      <!-- Row containing main screen area -->
-      <div class="row red">
-        <div class="screen-area-dropback screen-area">
-        <div class="screen-area-main screen-area cut-corner-bl">
-          <!-- Row containing small red buttons, above screen -->
-          <div class="row buttons">
-            <div class="tiny-button"></div>
-            <div class="tiny-button"></div>
-          </div>
-          <!-- End row containing small red buttons, above screen -->
-          <!-- Actual screen -->
-          <div class="row screen">
-              <p>
-                hey
-              </p>
-          </div>
-          <!-- End actual screen -->
-          <!-- Row containing doo-dads below main screen -->
-          <div class="row screen-area-doodads">
-            <div class="large-1 large-offset-1 columns">
-              <div class="post-screen-circle pokebutton"></div>
+    <div class="columns left-content center">
+        <!-- Row containing main screen area -->
+        <div class="row red">
+          <div class="screen-area-dropback screen-area">
+          <div class="screen-area-main screen-area cut-corner-bl">
+            <!-- Row containing small red buttons, above screen -->
+            <div class="row buttons">
+              <div class="tiny-button"></div>
+              <div class="tiny-button"></div>
             </div>
-            <div class="large-2 columns screen-lines">
-                <hr /><hr /><hr /><hr />
+            <!-- End row containing small red buttons, above screen -->
+            <!-- Actual screen -->
+            <div class="row screen">
+              <% if @pokemon %>
+                <img src="<%= @pokemon.image_url %>" alt="<%= @name %>">
+              <% end %>
             </div>
+            <!-- End actual screen -->
+            <!-- Row containing doo-dads below main screen -->
+            <div class="row screen-area-doodads">
+              <div class="small-1 columns">
+                <form action="/" method="post">
+                  <input type="hidden" name="clear" value="true">
+                  <input type="submit" class="post-screen-circle pokebutton" value="">
+                </form>
+              </div>
+              <div class="small-2 columns screen-lines">
+                  <hr /><hr /><hr /><hr />
+              </div>
+            </div>
+            <!-- End doodads below main screen -->
           </div>
-          <!-- End doodads below main screen -->
+          </div>
         </div>
-        </div>
-      </div>
-      <!-- End row containing main screen area -->
+        <!-- End row containing main screen area -->
 
-      <!-- Start Post-Screen Buttons column -->
-      <div class="large-8 columns post-screen">
-        <!-- Post-screen row of buttons -->
-        <div class="row post-screen-buttons">
-          <div class="blue-button pokebutton"></div>
-          <div class="green-button skinny-button pokebutton"></div>
-          <div class="red-button skinny-button pokebutton"></div>
-        </div>
-        <!-- End post-screen row of buttons -->
-        <!-- Post-screen yellow text area -->
-        <div class="row post-screen-text-area">
-          <div class="yellow-text-area"></div>
-        </div>
-        <!-- End post-screen yellow text area -->
-      </div>
-      <!-- Start Post-Screen Buttons column -->
-      <!-- Start Post-Screen Direction pad column -->
-      <div class="large-4 columns cross-wrapper">
-        <div class="cross cross-shadow"></div>
-        <div class="cross-main">
-          <div class="vertical cross-top"></div>
-          <div class="vertical cross-bottom"></div>
-          <div class="horizontal cross-left"></div>
-          <div class="horizontal cross-right"></div>
-        </div>
-      </div>
-      <!-- Start Post-Screen Direction pad column -->
-  </div>
-  <div class="center-joint">
-    <div class="half bottom"></div>
-    <div class="half top"></div>
-  </div>
-</div>
-<div class="large-4 columns right-content">
+        <!-- Start Post-Screen Buttons column -->
+        <div class="small-8 columns post-screen">
+          <form action="/" method="post">
+            <!-- Post-screen row of buttons -->
+            <div class="row post-screen-buttons">
+              <input type="submit" class="blue-button pokebutton" value="">
+              <div class="green-button skinny-button pokebutton"></div>
+              <div class="red-button skinny-button pokebutton"></div>
+            </div>
+            <!-- End post-screen row of buttons -->
+            <!-- Post-screen yellow text area -->
+            <div class="row post-screen-text-area">
+                <input type="text" class="yellow-text-area"
+                  id="poke_id" name="poke_id"
+                  required pattern="[0-9]{3}" maxlength="3"
+                  oninvalid="setCustomValidity('Please type a Pokemon\'s number ')"
+                  onfocus="value=''"
+                  <% if @pokemon %>
+                    <%= "value=\"#{@pokemon.id}\"" %>
+                  <% end %>
 
+                  />
+            </div>
+            <!-- End post-screen yellow text area -->
+          </form>
+        </div>
+        <!-- Start Post-Screen Buttons column -->
+        <!-- Start Post-Screen Direction pad column -->
+        <div class="small-4 columns cross-wrapper">
+          <div class="cross cross-shadow"></div>
+          <div class="cross-main">
+            <div class="vertical cross-top"></div>
+            <div class="vertical cross-bottom"></div>
+            <div class="horizontal cross-left"></div>
+            <div class="horizontal cross-right"></div>
+          </div>
+        </div>
+        <!-- Start Post-Screen Direction pad column -->
+    </div>
+    <div class="center-joint">
+      <div class="half bottom"></div>
+      <div class="half top"></div>
+    </div>
+  </div>
+  <div class="small-4 columns right-content">
+
+  </div>
 </div>

@@ -11,12 +11,17 @@ body {
   background-color: red;
 }
 
+
+.pokedex-wrapper {
+  margin: 10px;
+  height: 550px;
+}
+
 .left-area {
   background-color: red;
   position: relative;
   width: 438px;
-  height: 550px;
-  margin: 50px;
+  height: 100%;
   border-radius: 10px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -71,6 +76,11 @@ body {
   padding: 0.9375rem;
   box-shadow: 0 0 1px black inset, 1px -1px #666;
   height: 170px;
+  text-align: center;
+}
+
+.screen img {
+  height: 100%;
 }
 
 .buttons {
@@ -90,7 +100,8 @@ body {
   margin-top: 10px;
 }
 
-.pokebutton {
+.pokebutton,
+input.pokebutton {
   position: relative;
 }
 
@@ -99,15 +110,18 @@ body {
   left: -1px;
 }
 
-.post-screen-circle {
+input.post-screen-circle {
   height: 24px;
   width: 24px;
   border-radius: 30px;
   background-color: red;
   box-shadow: -2px 2px 0px rgb(173, 1, 1);
+  border: 0px solid black;
+  margin-top: 4px;
+  margin-left: 10px;
 }
 
-.post-screen-circle:active {
+input.post-screen-circle:active {
   background-color: rgb(230,0,0);
   box-shadow: -1px 1px 0 rgb(173, 1, 1);
 }
@@ -127,7 +141,7 @@ body {
 
 }
 
-.blue-button {
+input.blue-button {
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -135,6 +149,7 @@ body {
   box-shadow: -2px 2px 0 rgb(51, 51, 153);
   display: inline-block;
   margin-right: 5px;
+  border: 0px solid black;
 }
 
 .blue-button:active {
@@ -172,7 +187,8 @@ body {
   box-shadow: -1px 1px 0 rgb(150, 57, 40);
 }
 
-.yellow-text-area {
+input.yellow-text-area,
+input.yellow-text-area:focus {
   width: 150px;
   height: 60px;
   background-color: yellow;
@@ -181,6 +197,10 @@ body {
   box-shadow: 1px -1px #666;
   margin: auto;
   margin-top: 15px;
+  border-color: transparent;
+  transition: none;
+  text-align: center;
+  font-size: 1.45rem;
 }
 
 .cross-wrapper {
