@@ -1,11 +1,9 @@
 require 'sinatra'
 require 'pg'
 require 'rake'
-require "json"
-require "net/http"
-require 'pry'
-
 require 'pokegem'
+require 'json'
+require 'net/http'
 
 require_relative 'models/pokemon'
 
