@@ -7,6 +7,10 @@ body {
   padding: 10px;
 }
 
+.modal a {
+  text-decoration: underline;
+}
+
 .red {
   background-color: red;
 }
